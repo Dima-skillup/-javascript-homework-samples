@@ -28,11 +28,11 @@ function  replaceCSSComments (str) {
  * Функция получает строку, возвращает преобразованную строку.
  */
 function  replaceHTMLComments (str) {
-  return str.replace(/\<\!\-+.*?\-+\>\s?/g,'');
+  return str.replace(/\<\!\-+.*?\-+\>\s?/g,'').trim();
 }
-// console.log(replaceHTMLComments('<!--коммент1--> код без комментов <!--коммент2-->')); // код без комментов
-// console.log(replaceHTMLComments('<!--к1--> код <!-- к2 --><!-- к3 --> без <!-- к4 --> комментов')); // код без комментов
-// console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комментов')); // код без комментов
+console.log(replaceHTMLComments('<!--коммент1--> код без комментов <!--коммент2-->')); // код без комментов
+console.log(replaceHTMLComments('<!--к1--> код <!-- к2 --><!-- к3 --> без <!-- к4 --> комментов')); // код без комментов
+console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комментов')); // код без комментов
 
 /*
  * #3
@@ -41,9 +41,9 @@ function  replaceHTMLComments (str) {
  * С помощью test определите, что переданная строка заканчивается расширениями: jpg, jpeg, png.
  * Функция получает строку – имя файла, возвращает true или false.
  */
-// let  validateFileType = (str) => {
-//   return (/.+(\.jpg|\.jpeg|\.png)$/).test(str);
-// }
+let  validateFileType = (str) => {
+  return (/.+(\.jpg|\.jpeg|\.png)$/).test(str);
+}
 // console.log(validateFileType('image.png')); // true
 // console.log(validateFileType('image.html')); // false
 // console.log(validateFileType('image.file.jpg')); // true
@@ -58,9 +58,9 @@ function  replaceHTMLComments (str) {
  * Определите, что год находится в интервале от 1900 до 2100 с помощью одного только (единственного) регулярного выражения.
  * Функция получает строку – год, возвращает true или false.
  */
-// function checkYear(str) {
-//   return (/^(19\d\d|20\d\d|2100)$/).test(str);
-// }
+function checkYear(str) {
+  return (/^(19\d\d|20\d\d|2100)$/).test(str);
+}
 // console.log(checkYear(1900)); // true
 // console.log(checkYear(2001)); // true
 // console.log(checkYear(2100)); // true
