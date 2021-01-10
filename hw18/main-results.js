@@ -183,7 +183,7 @@ Object.defineProperties(Car.prototype, {
   }
 });
 Car.prototype.info = function() {
-  return `${this.name} ${this.model} ${this.engine}cc, year ${this.year}, ${this.used}`;
+  return `${this.name} ${this.model}, ${this.engine}cc, year ${this.year}, ${this.used}`;
 };
 let car = new Car(2000, 'Lacetti', 'Chevrolet', 2019);
 let car2 = new Car(5000, 'FX50 AWD', 'Infinite', 2019);
